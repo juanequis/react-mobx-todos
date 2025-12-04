@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
-import { todoStore } from '../stores/TodoStore';
 import type { TodoFilter } from '../stores/TodoStore';
+import { useTodoStore } from '../stores/TodoContext';
 
 const FILTERS: { value: TodoFilter; label: string }[] = [
   { value: 'all', label: 'All' },
@@ -9,7 +9,7 @@ const FILTERS: { value: TodoFilter; label: string }[] = [
 ];
 
 const TodoFilters = observer(() => {
-  const store = todoStore;
+  const store = useTodoStore();
 
   return (
     <div className="filters">

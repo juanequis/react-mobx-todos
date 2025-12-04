@@ -1,14 +1,15 @@
 import { FormEvent, useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import { todoStore } from '../stores/TodoStore';
+import { useTodoStore } from '../stores/TodoContext';
 
 const TodoInput = observer(() => {
+  const store = useTodoStore();
   const [title, setTitle] = useState('');
   
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    todoStore.addTodo(title);
+    store.addTodo(title);
     setTitle('');
   };
 

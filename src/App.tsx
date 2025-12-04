@@ -3,10 +3,10 @@ import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 import TodoStats from './components/TodoStats';
 import { observer } from 'mobx-react-lite';
-import { todoStore } from './stores/TodoStore';
+import { useTodoStore } from './stores/TodoContext';
 
 const App = observer(() => {
-  const store = todoStore;
+  const store = useTodoStore();
 
   return (
     <div className="page">

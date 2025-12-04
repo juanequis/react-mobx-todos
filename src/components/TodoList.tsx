@@ -1,9 +1,9 @@
 import TodoItem from './TodoItem';
 import { observer } from 'mobx-react-lite';
-import { todoStore as store } from '../stores/TodoStore';
+import { useTodoStore } from '../stores/TodoContext';
 
 const TodoList = observer(() => {
-  // const store = todoStore;
+  const store = useTodoStore();
 
   if (!store.hasTodos) {
     return <p className="empty">Start by adding a todo.</p>;
