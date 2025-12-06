@@ -9,13 +9,9 @@ const TodoList = observer(() => {
     return <p className="empty">Start by adding a todo.</p>;
   }
 
-  if (store.filteredTodos.length === 0) {
-    return <p className="empty">Nothing matches this filter.</p>;
-  }
-
   return (
     <ul className="todo-list">
-      {store.filteredTodos.map((todo) => (
+      {store.todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
     </ul>
