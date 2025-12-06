@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite';
-import { todoStore } from '../stores/TodoStore';
+import { useTodoStore } from '../stores/TodoContext';
 
 const TodoStats = observer(() => {
-  const store = todoStore;
+  const store = useTodoStore();
 
   return (
     <div className="stats">

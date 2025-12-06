@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import type { Todo } from '../stores/TodoStore';
-import { todoStore } from '../stores/TodoStore';
+import { useTodoStore } from '../stores/TodoContext';
 
 type Props = {
   todo: Todo;
 };
 
 const TodoItem = observer(({ todo }: Props) => {
-  const store = todoStore;
+  const store = useTodoStore();
   const [isEditing, setIsEditing] = useState(false);
   const [draftTitle, setDraftTitle] = useState(todo.title);
 
